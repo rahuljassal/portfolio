@@ -3,7 +3,7 @@
   <a href="https://rahul-jassal.vercel.app/" target="_blank">Rahul Jassal</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img3.png" />
+  <img alt="Demo" src="./Images/image.png" />
 </div>
 
 <br/>
