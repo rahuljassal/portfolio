@@ -17,6 +17,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -30,6 +31,7 @@ function App() {
   }, []);
 
   inject();
+  injectSpeedInsights();
   return (
     <Router>
       <Preloader load={load} />
