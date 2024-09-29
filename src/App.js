@@ -30,8 +30,10 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  inject();
-  injectSpeedInsights();
+  useEffect(() => {
+    inject();
+    injectSpeedInsights();
+  }, []);
   return (
     <Router>
       <Preloader load={load} />
