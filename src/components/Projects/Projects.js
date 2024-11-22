@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import editor from "../../Assets/Projects/codeEditor.png";
 import spotify from "../../Assets/Projects/Spotify.png";
 import youtube from "../../Assets/Projects/Youtube.png";
 import node from "../../Assets/Projects/Node.png";
+import email from "../../Assets/Projects/email.png";
 
 function Projects() {
   return (
@@ -41,6 +41,26 @@ function Projects() {
             />
           </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={email}
+              isBlog={false}
+              title="Email Automater"
+              description="🚀 Automate Your Job Hunt: A sleek Python script that simplifies outreach by reading HR details from an Excel file and sending personalized emails effortlessly. Perfect for job seekers looking to save time and make a professional first impression! 📧📋"
+              ghLink="https://github.com/rahuljassal/email_automater"
+              demoLink=""
+            />
+          </Col>
+          {/* <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={node}
+              isBlog={false}
+              title="Direct Supply"
+              description="Built a scalable and secure contact management system with CRUD operations, user authentication, and error handling using Node.js, Express, MongoDB, and JWT authentication."
+              ghLink="https://github.com/rahuljassal/contacts"
+              demoLink=""
+            />
+          </Col> */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={node}
