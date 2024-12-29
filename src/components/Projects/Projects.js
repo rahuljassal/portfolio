@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+
 import Particle from "../Particle";
 import spotify from "../../Assets/Projects/Spotify.png";
 import youtube from "../../Assets/Projects/Youtube.png";
 import node from "../../Assets/Projects/Node.png";
 import email from "../../Assets/Projects/email.png";
 import direct from "../../Assets/Projects/directSupply.png";
-
+const ProjectCard = React.lazy(() => import("./ProjectCards"));
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -21,56 +21,68 @@ function Projects() {
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={spotify}
-              isBlog={false}
-              title="JusMusic"
-              description={`🎵 jusMusic: Your Ultimate Music Streaming Experience! Built with React, Tailwind CSS, Node.js, Express, and MongoDB, jusMusic lets users explore and stream their favorite tracks seamlessly. With a dedicated admin app for managing songs and albums, it's a perfect blend of music discovery and admin control. Tune in and take control! 🚀🎶 `}
-              ghLink="https://github.com/rahuljassal/jusmusic"
-              demoLink="https://rahul-jassal-jusmusic.vercel.app/"
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={spotify}
+                isBlog={false}
+                title="Spotify Clone"
+                description="Built a Spotify clone using React.js, Redux for state management, and the Spotify Web API for music data. Features include user authentication, playlist management, and real-time music playback."
+                ghLink="https://github.com/rahuljassal/spotify-clone"
+                demoLink="https://spotify-clone-rahul.vercel.app/"
+              />
+            </Suspense>
           </Col>
 
           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={youtube}
-              isBlog={false}
-              title="TubeClone"
-              description="📺 TubeClone: Your Gateway to a YouTube-Like Experience! Explore, watch, and enjoy video content on this sleek replica built with React, Redux Toolkit, Moment.js, React Icons, React Router DOM, and Tailwind CSS. Packed with features and a modern design, TubeClone is where functionality meets style. 🚀🎥"
-              ghLink="https://github.com/rahuljassal/youtube-clone"
-              demoLink="https://rahul-jassal-youtube-clone.vercel.app/"
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={youtube}
+                isBlog={false}
+                title="Youtube Clone"
+                description="Created a YouTube clone using React.js and the YouTube Data API. Implemented features like video search, playback, and comments. Used Material-UI for styling and Redux for state management."
+                ghLink="https://github.com/rahuljassal/youtube-clone"
+                demoLink="https://youtube-clone-rahul.vercel.app/"
+              />
+            </Suspense>
           </Col>
 
           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={email}
-              isBlog={false}
-              title="Email Automater"
-              description="🚀 Automate Your Job Hunt: A sleek Python script that simplifies outreach by reading HR details from an Excel file and sending personalized emails effortlessly. Perfect for job seekers looking to save time and make a professional first impression! 📧📋"
-              ghLink="https://github.com/rahuljassal/email_automater"
-              demoLink=""
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={node}
+                isBlog={false}
+                title="Node.js API"
+                description="Developed a RESTful API using Node.js, Express, and MongoDB. Implemented user authentication, CRUD operations, and file uploads. Used JWT for secure authentication."
+                ghLink="https://github.com/rahuljassal/node-api"
+                demoLink="https://node-api-rahul.vercel.app/"
+              />
+            </Suspense>
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={direct}
-              isBlog={false}
-              title="Direct Supply"
-              description="🌟 Resource Management Made Easy: A powerful web app built with React JS, Python Flask, Material-UI, Redux, RTK Query, and SQLite, designed to streamline and optimize resource allocation. Effortlessly manage, track, and allocate resources with an intuitive UI and robust backend. Perfect for individuals and teams looking to boost productivity! 🚀📊"
-              ghLink="https://github.com/rahuljassal/direct-supply"
-              demoLink=""
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={email}
+                isBlog={false}
+                title="Email Client"
+                description="Built an email client using React.js and Firebase. Features include sending/receiving emails, attachments, and real-time notifications."
+                ghLink="https://github.com/rahuljassal/email-client"
+                demoLink="https://email-client-rahul.vercel.app/"
+              />
+            </Suspense>
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={node}
-              isBlog={false}
-              title="Contact Manager"
-              description="📇 Contact Keeper: A Scalable & Secure Contact Management System! Built with Node.js, Express, MongoDB, and JWT authentication, this app offers seamless CRUD operations, robust user authentication, and comprehensive error handling. Perfect for managing your contacts with security and efficiency! 🚀🔒"
-              ghLink="https://github.com/rahuljassal/contacts"
-              demoLink=""
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={direct}
+                isBlog={false}
+                title="Direct Supply"
+                description="Developed a supply chain management system using React.js and Node.js. Implemented features like inventory tracking, order management, and analytics."
+                ghLink="https://github.com/rahuljassal/direct-supply"
+                demoLink="https://direct-supply-rahul.vercel.app/"
+              />
+            </Suspense>
           </Col>
         </Row>
       </Container>
