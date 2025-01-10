@@ -2,11 +2,12 @@ import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Particle from "../Particle";
-import spotify from "../../Assets/Projects/Spotify.png";
-import youtube from "../../Assets/Projects/Youtube.png";
-import node from "../../Assets/Projects/Node.png";
-import email from "../../Assets/Projects/email.png";
-import direct from "../../Assets/Projects/directSupply.png";
+import spotify from "../../Assets/Projects/Spotify.svg";
+import youtube from "../../Assets/Projects/Youtube.svg";
+import node from "../../Assets/Projects/Node.svg";
+import email from "../../Assets/Projects/email.svg";
+import direct from "../../Assets/Projects/directSupply.svg";
+import chess from "../../Assets/Projects/chess.svg";
 const ProjectCard = React.lazy(() => import("./ProjectCards"));
 function Projects() {
   return (
@@ -32,7 +33,18 @@ function Projects() {
               />
             </Suspense>
           </Col>
-
+          <Col md={4} className="project-card">
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectCard
+                imgPath={chess}
+                isBlog={false}
+                title="Chess Game"
+                description="A fully-featured chess game built with React 18, Vite ,TypeScript, Tailwind CSS, Radix UI Components & shadcn/ui, featuring a complete implementation of chess rules, piece movement validation, and game state management."
+                ghLink="https://github.com/rahuljassal/Chess-Game"
+                demoLink="https://chess-game-olive-eight.vercel.app/"
+              />
+            </Suspense>
+          </Col>
           <Col md={4} className="project-card">
             <Suspense fallback={<div>Loading...</div>}>
               <ProjectCard
