@@ -2,12 +2,12 @@ import React, { Suspense } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Particle from "../Particle";
-import spotify from "../../Assets/Projects/Spotify.svg";
-import youtube from "../../Assets/Projects/Youtube.svg";
-import node from "../../Assets/Projects/Node.svg";
-import email from "../../Assets/Projects/email.svg";
-import direct from "../../Assets/Projects/directSupply.svg";
-import chess from "../../Assets/Projects/chess.svg";
+import spotify from "../../Assets/Projects/Spotify.png";
+import youtube from "../../Assets/Projects/youtube.png";
+import node from "../../Assets/Projects/Node.png";
+import email from "../../Assets/Projects/email.png";
+import direct from "../../Assets/Projects/direct-supply.png";
+import chess from "../../Assets/Projects/chess.png";
 const ProjectCard = React.lazy(() => import("./ProjectCards"));
 function Projects() {
   return (
